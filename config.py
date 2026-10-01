@@ -19,10 +19,10 @@
 
 # ===== API 配置 =====
 # API 密钥
-API_KEY = "XXX"
+API_KEY = "xxx"
 
 # 接口地址
-BASE_URL = "XXX"
+BASE_URL = "xxx"    
 
 # 模型名称（支持 function calling的模型）
 MODEL_NAME = "Qwen/Qwen2.5-72B-Instruct" # 可换
@@ -87,7 +87,7 @@ SYSTEM_PROMPT = """你是一个智能填表助手。你可以读取Excel文件�
 2. 说了要做X，必须立即调工具，不能只说不做
 3. 字段名必须来自list_tables或import_excel返回结果，不要猜。SQL报字段不存在时调list_tables，不要用SELECT * LIMIT 1探索
 4. 字段在表中不存在时（字段名不匹配或完全缺失），必须调ask_user问用户如何处理，不要擅自用NULL
-5. 5. 每个表单独列入todo_write，不要合并。todo必须包含导出步骤（如8个表就是8个查询步骤+1个询问导出方式+1个导出步骤）。导出完成前不能标所有步骤为completed
+5. 每个表单独列入todo_write，不要合并。todo必须包含导出步骤（如8个表就是8个查询步骤+1个询问导出方式+1个导出步骤）。导出完成前不能标所有步骤为completed
 6. 导出前必须调ask_user问合并还是分别导出
 7. 导出时复用之前查询成功的SQL，不要重新编写。如果忘了，调list_tables确认字段名再写
 8. import_excel结果可能截断显示但完整结果已发给你，不要猜表名，不确定就调list_tables
